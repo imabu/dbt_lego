@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_color
+    columns:
+      - name: color_id
+        tests:
+          - unique
+          - not_null
+      - name: is_trans
+        test:
+          - accepted_values:
+              values: ['f', 'y'] 
+
+  - name: stg_inventory
+    columns:
+      - name: inventory_id
+        tests:
+          - unique
+          - not_null
+      - name: version
+        tests:
+          - not_null
+
+  - name: stg_theme
+    columns:
+      - name: theme_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_set
+    columns:
+      - name: set_num
+        tests:
+          - unique
+          - not_null   
